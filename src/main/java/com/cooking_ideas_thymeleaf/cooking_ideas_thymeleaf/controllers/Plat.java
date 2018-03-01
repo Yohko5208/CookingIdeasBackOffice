@@ -278,7 +278,8 @@ class Plat {
         return ans;
     }
     public String format(String a)throws Exception{
-        a= com.sun.deploy.net.URLEncoder.encode(a, "UTF-8");
+        a= java.net.URLEncoder.encode(a, "UTF-8");
+        
         return a;
     }
     public List<Plat> getAllPlat() throws Exception{
