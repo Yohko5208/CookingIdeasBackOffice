@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<div th:replace="header :: head"></div>
+<body>
+
+<div class="wrapper">
+    <div th:replace="wrapper :: sidebar"></div>
+    <div class="main-panel">
+        <div th:replace="wrapper :: nav"></div>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Cooking Ideas</h4>
+                                <p class="category">Back Office</p>
+                            </div>
+                            <div class="content">
+
+                                <div class="typo-line">
+                                    <h1 style="text-align: center">Bienvenue dans le Back Office de Cooking Ideas</h1>
+                                </div>
+
+                            </div>
+                            <div th:each="plat : ${liste}">
+                                <div class="col-md-4">
+                                    <div class="card card-user">
+                                        <div class="image">
+                                            <img src="a.jpg" alt="..."/>
+                                        </div>
+                                        <div class="content">
+                                            <div class="author">
+                                                <a href="">
+                                                    <img class="avatar border-gray" th:src="'https://imagecooking.000webhostapp.com/images/'+${plat.image}" alt="..."/>
+
+                                                    <h4 th:text="${plat.name}" class="title">Mike Andrew<br />
+                                                        <small th:text="${plat.level}">michael24</small>
+                                                    </h4>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                        <hr/>
+                                        <div class="text-center">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div th:replace="wrapper :: footer"></div>
+    </div>
+</div>
+
+
+</body>
+
+        <!--   Core JS Files   -->
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
+
+	<!--  Charts Plugin -->
+	<script src="assets/js/chartist.min.js"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="assets/js/bootstrap-notify.js"></script>
+
+    <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+	<script src="assets/js/light-bootstrap-dashboard.js"></script>
+
+	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+	<script src="assets/js/demo.js"></script>
+
+</html>

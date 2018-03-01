@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <div th:replace="header :: head"></div>
+</head>
+<body>
+
+<div class="wrapper">
+    <div th:replace="wrapper :: sidebar"></div>
+
+    <div class="main-panel">
+        <div th:replace="wrapper :: nav"></div>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Insérer un nouveau plat</h4>
+                            </div>
+                            <div class="content">
+                                <form method="post" action="insert" th:action="@{/insert}" th:object="${plat}">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <label>Nom</label>
+                                                <input th:field="*{name}" type="text" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Image</label>
+                                                <input th:field="*{image}" type="text" class="form-control" disabled="disabled" placeholder="Image" value="platInserer.jpg"/>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Niveau</label>
+                                                <select th:field="*{level}" class="form-control">
+                                                    <option value="Facile">Facile</option>
+                                                    <option value="Moyen">Moyen</option>
+                                                    <option value="Difficile">Difficile</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Temps de préparation (en min)</label>
+                                                <input th:field="*{preparation_time}" type="number" class="form-control" min="1" placeholder=""/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Temps de cuisson (en min)</label>
+                                                <input th:field="*{cooking_time}" type="number" class="form-control" min="1" placeholder=""/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Ingrédients</label>
+                                                <textarea th:field="*{ingr}" rows="5" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Recette</label>
+                                                <textarea th:field="*{recette}" rows="5" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="footer" th:text="${error}"></div>
+                                    <div class="footer-success" th:text="${success}"></div>
+                                    <button type="submit" class="btn btn-info btn-fill pull-right">Insérer</button>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div th:replace="wrapper :: footer"></div>
+
+    </div>
+</div>
+
+
+</body>
+
+    <!--   Core JS Files   -->
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
+
+	<!--  Charts Plugin -->
+	<script src="assets/js/chartist.min.js"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="assets/js/bootstrap-notify.js"></script>
+
+    <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+	<script src="assets/js/light-bootstrap-dashboard.js"></script>
+
+	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+	<script src="assets/js/demo.js"></script>
+
+</html>

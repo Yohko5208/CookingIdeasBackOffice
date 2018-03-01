@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="sidebar" class="sidebar" data-color="blue" data-image="assets/img/sidebar-5.jpg">
+
+    <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
+
+
+    <div class="sidebar-wrapper">
+        <div class="logo">
+            <a href="home" class="simple-text">
+                Cooking Ideas BackOffice
+            </a>
+        </div>
+
+        <ul class="nav">
+            <li class="active">
+                <a href="home">
+                    <i class="pe-7s-home"></i>
+                    <p>Home</p>
+                </a>
+            </li>
+            <li>
+                <a href="insertPlat">
+                    <i class="pe-7s-wine"></i>
+                    <p>Insérer un nouveau plat</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<footer th:fragment="footer" class="footer">
+    <div class="container-fluid">
+        <nav class="pull-left">
+            <ul>
+                <li>
+                    <a href="home">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="https://fierce-plateau-91542.herokuapp.com/home">
+                        Cooking Ideas
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <p class="copyright pull-right">
+            &copy; <script>document.write(new Date().getFullYear())</script> <a>Cooking Ideas</a>, love food, love life
+        </p>
+    </div>
+</footer>
+<nav th:fragment="nav" class="navbar navbar-default navbar-fixed">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">Cooking Ideas</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="https://fierce-plateau-91542.herokuapp.com/home">
+                        <p>Accéder au Front Office</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="disconnect">
+                        <p>Se déconnecter</p>
+                    </a>
+                </li>
+                <li class="separator hidden-lg hidden-md"></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+</html>
